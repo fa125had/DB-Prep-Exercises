@@ -1,4 +1,6 @@
 /*
+ ERD Diagram -- https://lucid.app/lucidchart/6f79f5e6-03fe-4763-a58c-64295a2aebaf/edit?viewport_loc=-1085%2C-479%2C2813%2C1485%2C0_0&invitationId=inv_23837bd3-9ea0-4b6a-b141-d6d4cc0e8dd7
+ 
  Entities:
  Recipes
  Categories
@@ -17,7 +19,6 @@
  Recipe to Step: Many-to-many via RecipeSteps
  
  */
-
 --  Creating DATABASE
 DROP DATABASE IF EXISTS `hackYourKitchen`;
 
