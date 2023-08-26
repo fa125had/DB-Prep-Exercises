@@ -1,5 +1,10 @@
 /*
+ ERD --- https://dbdiagram.io/d/64e9d05702bd1c4a5e71c2cb
+
+ ERD --- lucid.app / lucidchart / 6f79f5e6 - 03fe -4763 - a58c - 64295a2aebaf / edit ? invitationId = inv_23837bd3 - 9ea0 - 4b6a - b141 - d6d4cc0e8dd7 & page = 0_0 #
+
  ERD --- https://drive.google.com/file/d/1cP38EVn9fP1KleK2gqgyw3ADLcqzPNs7/view?usp=sharing
+
  Entities:
  Recipe
  Category
@@ -33,12 +38,12 @@ CREATE TABLE Recipes (
 
 CREATE TABLE Categories (
   CategoryID INT PRIMARY KEY AUTO_INCREMENT,
-  CategoryName VARCHAR(50) UNIQUE NOT NULL
+  CategoryName VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Ingredients (
   IngredientID INT PRIMARY KEY AUTO_INCREMENT,
-  IngredientName VARCHAR(255) UNIQUE NOT NULL
+  IngredientName VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Steps (
