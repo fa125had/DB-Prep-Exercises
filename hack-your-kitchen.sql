@@ -1,21 +1,15 @@
 /*
- ERD --- https://dbdiagram.io/d/64e9d05702bd1c4a5e71c2cb
-
- ERD --- lucid.app / lucidchart / 6f79f5e6 - 03fe -4763 - a58c - 64295a2aebaf / edit ? invitationId = inv_23837bd3 - 9ea0 - 4b6a - b141 - d6d4cc0e8dd7 & page = 0_0 #
-
- ERD --- https://drive.google.com/file/d/1cP38EVn9fP1KleK2gqgyw3ADLcqzPNs7/view?usp=sharing
-
  Entities:
- Recipe
- Category
- Ingredient
- Step
+ Recipes
+ Categories
+ Ingredients
+ Steps
  
  Attributes:
- Recipe: RecipeID, RecipeName
- Category: CategoryID, CategoryName
- Ingredient: IngredientID, IngredientName
- Step: StepID, StepDescription
+ Recipes: RecipeID, RecipeName
+ Categories: CategoryID, CategoryName
+ Ingredients: IngredientID, IngredientName
+ Steps: StepID, StepDescription
  
  Relationships:
  Recipe to Category: Many-to-many via RecipeCategories
@@ -23,6 +17,7 @@
  Recipe to Step: Many-to-many via RecipeSteps
  
  */
+
 --  Creating DATABASE
 DROP DATABASE IF EXISTS `hackYourKitchen`;
 
@@ -78,6 +73,7 @@ CREATE TABLE RecipeSteps (
 );
 
 -- Data Insertion
+
 -- Categories
 INSERT INTO
   Categories (CategoryName)
@@ -133,3 +129,58 @@ VALUES
   ('Add some mix to the sauce pan'),
   ("Let is cook for 1'"),
   ('Remove pan from fire');
+
+-- Recipes
+INSERT INTO
+  Recipes (RecipeName)
+VALUES
+  ('Cheesecake'),
+  ('Mac and Cheese'),
+  ('Japanese Omelette');
+
+-- Bridge Tables Insertion
+
+-- RecipeCategories
+INSERT INTO
+  RecipeCategories (RecipeID, CategoryID)
+VALUES
+  -- Cheesecake
+  (1, 1),
+  -- Gluten-Free
+  (2, 5),
+  -- Japanese
+  (3, 6);
+
+-- RecipeIngredients
+INSERT INTO
+  RecipeIngredients (RecipeID, IngredientID)
+VALUES
+  -- Condensed milk
+  (1, 1),
+  -- Cream Cheese
+  (1, 2),
+  -- Olive oil
+  (2, 10),
+  -- Macaroni
+  (2, 11),
+  -- Eggs
+  (3, 17),
+  -- Soy sauce
+  (3, 18);
+
+-- RecipeSteps
+INSERT INTO
+  RecipeSteps (RecipeID, StepID, StepOrder)
+VALUES
+  -- Cheesecake Step 1
+  (1, 1, 1),
+  -- Cheesecake Step 2
+  (1, 2, 2),
+  -- Mac and Cheese Step 1
+  (2, 3, 1),
+  -- Mac and Cheese Step 2
+  (2, 4, 2),
+  -- Japanese Omelette Step 1
+  (3, 7, 1),
+  -- Japanese Omelette Step 2
+  (3, 8, 2);
