@@ -11,7 +11,7 @@
  Ingredients: IngredientID, IngredientName
  Steps: StepID, StepDescription
  
- Relationships:
+ Relations:
  Recipe to Category: Many-to-many via RecipeCategories
  Recipe to Ingredient: Many-to-many via RecipeIngredients
  Recipe to Step: Many-to-many via RecipeSteps
@@ -25,7 +25,7 @@ CREATE DATABASE `hackYourKitchen`;
 
 USE hackYourKitchen;
 
---  Creating Main Tables
+--  Creating Tables
 CREATE TABLE Recipes (
   RecipeID INT PRIMARY KEY AUTO_INCREMENT,
   RecipeName VARCHAR(50) NOT NULL
@@ -73,7 +73,6 @@ CREATE TABLE RecipeSteps (
 );
 
 -- Data Insertion
-
 -- Categories
 INSERT INTO
   Categories (CategoryName)
@@ -138,8 +137,7 @@ VALUES
   ('Mac and Cheese'),
   ('Japanese Omelette');
 
--- Bridge Tables Insertion
-
+-- Bridge Tables Data Insertion
 -- RecipeCategories
 INSERT INTO
   RecipeCategories (RecipeID, CategoryID)
