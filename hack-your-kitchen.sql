@@ -18,6 +18,16 @@
  Recipe to Ingredient: Many-to-many via RecipeIngredients
  Recipe to Step: Many-to-many via RecipeSteps
  
+ Where can you add a primary key ?
+ If I understand this question correctly, we can add them in three ways,
+ 1- define an attribute in a table as a Primary key,
+ 2- Use it in another table as Foreign Key, 
+ 3- Combine it with another Public key and use them as Composite Public Key 
+
+ Which tables should be linked with a foreign key ?
+ still not 100% sure but in general we need foreign key for link two or more tables together, 
+ in this example i had to linked the junction tables with tables with using of foreign keys. but we can use them between two ordinary tables too. 
+ 
  */
 --  Creating DATABASE
 DROP DATABASE IF EXISTS `hackYourKitchen`;
